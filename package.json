@@ -1,0 +1,23 @@
+{
+  "name": "convert_tree",
+  "version": "1.0.0",
+  "description": "chrome extension for translation of unit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./js/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lowweighthighrepeat/convert_tree.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lowweighthighrepeat/convert_tree/issues"
+  },
+  "homepage": "https://github.com/lowweighthighrepeat/convert_tree#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
