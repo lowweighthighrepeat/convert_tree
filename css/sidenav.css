@@ -1,37 +1,301 @@
 /* The side navigation menu */
 .convert-tree-sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1000000; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  height: 100%; /* 100% Full-height */
+  width: 0px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1000000; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.convert-tree-sidenav a {
+  flex: 1;
+  text-align: end;
+  padding: 8px;
+  text-decoration: none;
+  font-size: 40px;
+  color: #ececec;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.convert-tree-sidenav a:hover {
+  color: #191919;
+}
+
+/* Position and style the close button (top right corner) */
+.convert-tree-sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.pure-css-select-style {
+  width: 100%;
+  overflow: hidden;
+}
+.pure-css-select-style select {
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.theme-rounded {
+  border: 2px solid #2980b9;
+  border-radius: 50px;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2222%22%20viewBox%3D%220%200%2018%2022%22%3E%3Cpath%20d%3D%22M9%2017L2.07%205L15.93%205z%22%20stroke-width%3D%222%22%20stroke%3D%22%232980b9%22%20fill%3D%22transparent%22%2F%3E%3C%2Fsvg%3E")
+    right 14px center no-repeat;
+}
+.theme-rounded select {
+  padding: 12px 38px 12px 16px;
+  font: 400 16px/1 "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  color: #2980b9;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
+.convert-tree-sidenav * {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/*---------------------------------------------*/
+.convert-tree-sidenav   a {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0px;
+  transition: all 0.4s;
+}
+
+.convert-tree-sidenav a:focus {
+  outline: none !important;
+}
+
+.convert-tree-sidenav a:hover {
+  text-decoration: none;
+}
+
+/*---------------------------------------------*/
+.convert-tree-sidenav input {
+  outline: none;
+  border: none;
+}
+
+.convert-tree-sidenav textarea {
+  outline: none;
+  border: none;
+}
+
+.convert-tree-sidenav textarea:focus,
+.convert-tree-sidenav input:focus {
+  border-color: transparent !important;
+}
+
+.convert-tree-sidenav input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.convert-tree-sidenav textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.convert-tree-sidenav input::-webkit-input-placeholder {
+  color: #adadad;
+}
+
+.convert-tree-sidenav textarea::-webkit-input-placeholder {
+  color: #adadad;
+}
+
+/*---------------------------------------------*/
+.convert-tree-sidenav button {
+  outline: none !important;
+  border: none;
+  background: transparent;
+}
+
+.convert-tree-sidenav button:hover {
+  cursor: pointer;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Contact ]*/
+
+.container-contact100 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0px 15px;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+}
+
+.wrap-contact100 {
+  width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/*------------------------------------------------------------------
+[ Form ]*/
+
+.contact100-form {
+  width: 100%;
+}
+
+.contact100-form-title {
+  display: block;
+  font-size: 39px;
+  color: #333333;
+  text-align: center;
+  padding-bottom: 44px;
+}
+
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input100 {
+  width: 100%;
+  border-bottom: 2px solid #d9d9d9;
+  padding-bottom: 13px;
+  margin-bottom: 27px;
+}
+
+.label-input100 {
+  font-size: 13px;
+  color: #666666;
+  line-height: 1.5;
+  padding-left: 5px;
+}
+
+.input100 {
+  display: block;
+  width: 100%;
+  background: transparent;
+  font-size: 18px;
+  color: #333333;
+  line-height: 1.2;
+  padding: 0 5px;
+}
+
+.focus-input100 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.focus-input100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  background: #7f7f7f;
+}
+
+/*---------------------------------------------*/
+input.input100 {
+  height: 40px;
+}
+
+textarea.input100 {
+  min-height: 110px;
+  padding-top: 9px;
+  padding-bottom: 13px;
+}
+
+.input100:focus + .focus-input100::before {
+  width: 100%;
+}
+
+.has-val.input100 + .focus-input100::before {
+  width: 100%;
+}
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-contact100-form-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 13px;
+}
+
+.wrap-contact100-form-btn {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 999999;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.contact100-form-bgbtn {
+  position: absolute;
+  z-index: -1;
+  width: 300%;
+  height: 100%;
+  background: -webkit-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  top: 0;
+  left: -100%;
+
+  transition: all 0.4s;
+}
+
+.contact100-form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.wrap-contact100-form-btn:hover .contact100-form-bgbtn {
+  left: 0;
+}
+
+/*------------------------------------------------------------------
+[ Responsive ]*/
+/* 
+@media (max-width: 576px) {
+  .wrap-contact100 {
+    padding: 72px 15px 65px 15px;
   }
-  
-  /* The navigation menu links */
-  .convert-tree-sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .convert-tree-sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  /* Position and style the close button (top right corner) */
-  .convert-tree-sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
+} */
