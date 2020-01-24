@@ -1,7 +1,7 @@
 /* The side navigation menu */
 .convert-tree-sidenav {
   height: 100%; /* 100% Full-height */
-  width: 0px; /* 0 width - change this with JavaScript */
+  width: 250px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1000000; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -74,13 +74,6 @@
 }
 
 /*---------------------------------------------*/
-.convert-tree-sidenav   a {
-  font-size: 14px;
-  line-height: 1.7;
-  color: #666666;
-  margin: 0px;
-  transition: all 0.4s;
-}
 
 .convert-tree-sidenav a:focus {
   outline: none !important;
@@ -137,22 +130,24 @@
 [ Contact ]*/
 
 .container-contact100 {
+  align-content: baseline;
   width: 100%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  
   justify-content: center;
-  padding: 0px 15px;
   background: #a64bf4;
   background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
 }
 
 .wrap-contact100 {
+  margin: 20px 10px;
   width: 500px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  padding: 10px;
+  padding: 60px 8px;
 }
 
 /*------------------------------------------------------------------
@@ -235,13 +230,13 @@ textarea.input100 {
   padding-bottom: 13px;
 }
 
-.input100:focus + .focus-input100::before {
+/* .input100:focus + .focus-input100::before {
   width: 100%;
 }
 
 .has-val.input100 + .focus-input100::before {
   width: 100%;
-}
+} */
 
 /*------------------------------------------------------------------
 [ Button ]*/
