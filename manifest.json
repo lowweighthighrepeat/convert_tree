@@ -4,7 +4,9 @@
     "description": "You can convert string to other encoding",
     "permissions": [
         "tabs",
-        "activeTab"],
+        "activeTab",
+        "clipboardRead"
+    ],
     "content_scripts": [{
         "css": [
             "css/sidenav.css"
