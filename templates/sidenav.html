@@ -13,35 +13,35 @@
             <span class="contact100-form-title">
               Convert Tree
             </span>
-            
+
             <div class="wrap-input100 validate-input" data-validate="Name is required">
               <div class="pure-css-select-style theme-rounded">
-                <select name="budget">
-                  <option>From</option>
-                  <option>bin</option>
-                  <option>hex</option>
+                <select name="budget" id="from-type">
+                  <option value="">From</option>
+                  <option value="2" selected>bin</option>
+                  <option value="16">hex</option>
                 </select>
             </div>
-              <input id="fromText" class="input100" type="text" name="name" placeholder="From 값">
+              <input id="from-value" class="input100" type="text" name="name" placeholder="From 값">
               <span class="focus-input100"></span>
           </div>
-          
+
           <div class="wrap-input100 validate-input" data-validate="Name is required">
             <div class="pure-css-select-style theme-rounded">
-              <select name="budget">
-                <option>To</option>
-                <option>bin</option>
-                <option>hex</option>
+              <select name="budget" id="to-type">
+                <option value="">To</option>
+                <option value="2" selected>bin</option>
+                <option value="16">hex</option>
               </select>
           </div>
-            <input id="toText" class="input100" type="text" name="name" placeholder="To 값">
+            <input id="to-value" class="input100" type="text" name="name" placeholder="To 값">
             <span class="focus-input100"></span>
         </div>
-          
+
             <div class="container-contact100-form-btn">
               <div class="wrap-contact100-form-btn">
                 <div class="contact100-form-bgbtn"></div>
-                <button class="contact100-form-btn">
+                <button class="contact100-form-btn" id="submit-convert">
                   <span>
                     Submit
                     <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
