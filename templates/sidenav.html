@@ -1,5 +1,6 @@
 <head>
-  <link rel="stylesheet" href="../css/sidenav.css" />
+  <!-- css/sidenav.css 는 manifest.json의 content_script 에서 적용되므로 아래 문구 삭제 -->
+  <!-- <link rel="stylesheet" href="../css/sidenav.css" /> -->
 </head>
 <body>
   <div id="mySidenav" class="convert-tree-sidenav">
@@ -21,7 +22,7 @@
                   <option>hex</option>
                 </select>
             </div>
-              <input class="input100" type="text" name="name" placeholder="From 값">
+              <input id="fromText" class="input100" type="text" name="name" placeholder="From 값">
               <span class="focus-input100"></span>
           </div>
           
@@ -33,7 +34,7 @@
                 <option>hex</option>
               </select>
           </div>
-            <input class="input100" type="text" name="name" placeholder="To 값">
+            <input id="toText" class="input100" type="text" name="name" placeholder="To 값">
             <span class="focus-input100"></span>
         </div>
           
