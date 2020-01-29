@@ -7,9 +7,9 @@ closeBtn.onclick = function() {
 
 // When the user clicks anywhere outside of the sidenav, close it
 window.onclick = function(event) {
-    if (event.target == closeBtn) {
-        sideNav.style.width = "0";
-    }
+  if (event.target == closeBtn) {
+    sideNav.style.width = "0"
+  }
 }
 
 sideNav.style.width="250px"
