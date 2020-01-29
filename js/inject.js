@@ -10,4 +10,3 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
                 {code: 'document.getElementById("fromText").value="'+clipboardText.value+'"', runAt: "document_end"})
         });
 })
-// window.close();
