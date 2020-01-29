@@ -11,17 +11,14 @@ var convert = (fromType, fromValue, toType) => {
 }
 
 fromType.onselect = (e) => {
-  console.log(e)
   toInput.value = convert(e.target.value, fromInput.value, toType.value)
 }
 
 fromInput.oninput = (e) => {
-  console.log(e)
   toInput.value = convert(fromType.value, e.target.value, toType.value)
 }
 
 toType.onselect = (e) => {
-  console.log(e)
   toInput.value = convert(fromType.value, fromInput.value, e.target.value)
 }
 
