@@ -147,7 +147,7 @@
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  padding: 60px 8px;
+  padding: 20px 8px;
 }
 
 /*------------------------------------------------------------------
@@ -159,7 +159,7 @@
 
 .contact100-form-title {
   display: block;
-  font-size: 39px;
+  font-size: 30px;
   color: #333333;
   text-align: center;
   padding-bottom: 44px;

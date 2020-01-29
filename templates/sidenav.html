@@ -15,10 +15,10 @@
             
             <div class="wrap-input100 validate-input" data-validate="Name is required">
               <div class="pure-css-select-style theme-rounded">
-                <select name="budget">
-                  <option>From</option>
-                  <option>bin</option>
-                  <option>hex</option>
+                <select name="budget" required>
+                  <option value="" >From</option >
+                  <option value="bin">bin</option> 
+                  <option value="hex">hex</option> 
                 </select>
             </div>
               <input class="input100" type="text" name="name" placeholder="From 값">
@@ -27,10 +27,10 @@
           
           <div class="wrap-input100 validate-input" data-validate="Name is required">
             <div class="pure-css-select-style theme-rounded">
-              <select name="budget">
-                <option>To</option>
-                <option>bin</option>
-                <option>hex</option>
+              <select name="budget" required>
+                <option value="">To</option >
+                <option value="bin">bin</option>
+                <option value="hex">hex</option>
               </select>
           </div>
             <input class="input100" type="text" name="name" placeholder="To 값">
