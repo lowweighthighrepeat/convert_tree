@@ -24,6 +24,14 @@
   "web_accessible_resources": [
       "sidenav.html"
   ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+A",
+        "mac": "Ctrl+Shift+A"
+      }
+    }
+  },
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
