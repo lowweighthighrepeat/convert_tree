@@ -1,0 +1,29 @@
+{
+  "name": "Convert Tree",
+  "version": "1.0",
+  "description": "You can convert string to other encoding",
+  "permissions": [
+      "tabs",
+      "activeTab",
+      "clipboardRead"
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "convert tree"
+  },
+  "content_scripts": [
+    {
+        "js": ["init.bundle.js"],
+        "css": ["sidenav.css"],
+        "matches": ["*://*/*"]
+    }
+  ],
+  "web_accessible_resources": [
+      "sidenav.html"
+  ],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
