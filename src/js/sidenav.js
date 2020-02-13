@@ -15,12 +15,12 @@ window.onclick = (event) => {
 window.onkeydown = (event) => {
   if(event.keyCode === 13) {
     if(sideNav.style.width === "250px") {
-      var toValue = document.querySelector("#to-value");
-      toValue.select();
-      document.execCommand('copy');
+      var toValue = document.querySelector("#to-value")
+      toValue.select()
+      document.execCommand('copy')
       sideNav.style.width = "0"
     }
   }
 }
 
-sideNav.style.width="250px";
+sideNav.style.width="250px"
