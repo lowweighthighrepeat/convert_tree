@@ -1,6 +1,4 @@
-const fuck = require('./fuck')
+const init = require('./lib')
+const test = require('./test')
 
-const convertor = {fuck: fuck}
-console.log(convertor)
-
-module.exports = convertor
+module.exports = { init: init, test: test }
