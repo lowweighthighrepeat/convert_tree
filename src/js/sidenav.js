@@ -1,3 +1,5 @@
+import convertor  from './popup/index'
+
 var sideNav = document.getElementById("mySidenav")
 var closeBtn = document.getElementsByClassName("convert-tree-closebtn")[0]
 var copyBtn = document.getElementsByClassName("copy-btn")[0]
@@ -32,6 +34,8 @@ closeBtn.onclick = () => {
 // When the user clicks anywhere outside of the sidenav, close it
 window.onclick = (event) => {
   if (event.target === closeBtn) {
+    sideNav.style.width = "0"
+    convertor.fuck()
     closeSideNav()
   }
 }
