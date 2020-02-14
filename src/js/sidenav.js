@@ -1,3 +1,5 @@
+import convertor  from './popup/index'
+
 var sideNav = document.getElementById("mySidenav")
 var closeBtn = document.getElementsByClassName("convert-tree-closebtn")[0]
 
@@ -9,6 +11,7 @@ closeBtn.onclick = () => {
 window.onclick = (event) => {
   if (event.target === closeBtn) {
     sideNav.style.width = "0"
+    convertor.fuck()
   }
 }
 

@@ -1,21 +1,21 @@
-var webpack = require("webpack"),
-    path = require("path"),
-    fileSystem = require("fs"),
-    env = require("./utils/env"),
-    CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin,
-    CopyWebpackPlugin = require("copy-webpack-plugin"),
-    HtmlWebpackPlugin = require("html-webpack-plugin"),
-    WriteFilePlugin = require("write-file-webpack-plugin");
+var webpack = require("webpack")
+var path = require("path")
+var fileSystem = require("fs")
+var env = require("./utils/env")
+var CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin
+var CopyWebpackPlugin = require("copy-webpack-plugin")
+var HtmlWebpackPlugin = require("html-webpack-plugin")
+var WriteFilePlugin = require("write-file-webpack-plugin")
 
 // load the secrets
-var alias = {};
+var alias = {}
 
-var secretsPath = path.join(__dirname, ("secrets." + env.NODE_ENV + ".js"));
+var secretsPath = path.join(__dirname, ("secrets." + env.NODE_ENV + ".js"))
 
-var fileExtensions = ["jpg", "jpeg", "png", "gif", "eot", "otf", "svg", "ttf", "woff", "woff2"];
+var fileExtensions = ["jpg", "jpeg", "png", "gif", "eot", "otf", "svg", "ttf", "woff", "woff2"]
 
 if (fileSystem.existsSync(secretsPath)) {
-  alias["secrets"] = secretsPath;
+  alias["secrets"] = secretsPath
 }
 
 var options = {
@@ -92,11 +92,12 @@ var options = {
       chunks: ["sidenav"]
     }),
     new WriteFilePlugin()
-  ]
-};
-
-if (env.NODE_ENV === "development") {
-  options.devtool = "cheap-module-eval-source-map";
+  ],
+  target: 'web'
 }
 
-module.exports = options;
+if (env.NODE_ENV === "development") {
+  options.devtool = "cheap-module-eval-source-map"
+}
+
+module.exports = options
