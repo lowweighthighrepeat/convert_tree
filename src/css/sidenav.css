@@ -8,6 +8,8 @@
   left: 0;
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  box-shadow: 7px 0px 4px purple;
+  border-radius: 4px;
 }
 
 /* The navigation menu links */
@@ -135,13 +137,14 @@
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  
+
   justify-content: center;
   background: #a64bf4;
   background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
 }
 
 .wrap-contact100 {
+  box-shadow: 0px 0px 5px 5px purple;
   margin: 20px 10px;
   width: 500px;
   background: #fff;
@@ -294,3 +297,53 @@ textarea.input100 {
     padding: 72px 15px 65px 15px;
   }
 } */
+.input-container{
+  display: inline-flex;
+}
+
+/* Tooltip container */
+.copy-btn {
+  margin-right: 10px;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.copy-btn .tooltiptext {
+  font-size: x-small;
+  width: 40px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -20px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+}
+
+/* Tooltip arrow */
+.copy-btn .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  transparent transparent #555 transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.copy-btn:active .tooltiptext {
+  /* visibility: visible; */
+  /* opacity: 1; */
+}

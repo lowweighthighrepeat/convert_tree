@@ -5,54 +5,78 @@
 <body>
   <div id="mySidenav" class="convert-tree-sidenav">
     <!-- 퍼온거 -->
-      <div class="container-contact100">
-        <a href="#" class="convert-tree-closebtn">&times;</a>
+    <div class="container-contact100">
+      <a href="#" class="convert-tree-closebtn">&times;</a>
+      <div class="wrap-contact100">
+        <div class="contact100-form validate-form">
+          <span class="contact100-form-title">
+            Convert Tree
+          </span>
 
-        <div class="wrap-contact100">
-          <form class="contact100-form validate-form">
-            <span class="contact100-form-title">
-              Convert Tree
-            </span>
-
-            <div class="wrap-input100 validate-input" data-validate="Name is required">
-              <div class="pure-css-select-style theme-rounded">
-                <select name="budget" id="from-type">
-                  <option value="">From</option>
-                  <option value="2" selected>bin</option>
-                  <option value="16">hex</option>
-                </select>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
+            <div class="pure-css-select-style theme-rounded">
+              <select name="budget" id="from-type">
+                <option value="">From</option>
+                <option value="2" selected>bin</option>
+                <option value="16">hex</option>
+              </select>
             </div>
-              <input id="from-value" class="input100" type="text" name="name" placeholder="From 값">
-              <span class="focus-input100"></span>
+            <input
+              id="from-value"
+              class="input100"
+              type="text"
+              name="name"
+              placeholder="From 값"
+            />
+            <span class="focus-input100"></span>
           </div>
 
-          <div class="wrap-input100 validate-input" data-validate="Name is required">
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
             <div class="pure-css-select-style theme-rounded">
               <select name="budget" id="to-type">
                 <option value="">To</option>
                 <option value="2" selected>bin</option>
                 <option value="16">hex</option>
               </select>
-          </div>
-            <input id="to-value" class="input100" type="text" name="name" placeholder="To 값">
+            </div>
+            <div class="input-container">
+              <input
+                id="toText"
+                class="input100"
+                type="text"
+                name="name"
+                placeholder="To 값"
+              />
+              <button class="copy-btn" onclick="copyAction()">
+                <img src="./img/copybtn.svg" alt="" />
+                <span class="tooltiptext" id='tooltiptext'>copied!</span>
+              </button>
+            </div>
             <span class="focus-input100"></span>
-        </div>
-<!-- 
-            <div class="container-contact100-form-btn">
-              <div class="wrap-contact100-form-btn">
-                <div class="contact100-form-bgbtn"></div>
-                <button class="contact100-form-btn" id="submit-convert">
-                  <span>
-                    Submit
-                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                  </span>
-                </button>
-              </div>
-            </div> -->
-          </form>
+          </div>
         </div>
       </div>
-      <!-- 퍼온거 끝 -->
-    </form>
+    </div>
+    <!-- 퍼온거 끝 -->
   </div>
 </body>
+<script>
+  function hideDiv() {
+   
+  }
+  function copyAction() {
+    var copytext = document.getElementById("toText");
+    copytext.focus();
+    copytext.select();
+    document.execCommand("Copy");
+    copytext.blur();
+    document.getElementById("tooltiptext").style.opacity = 1;
+    self.setTimeout(()=>{ document.getElementById("tooltiptext").style.opacity = 0;}, 2000);
+  }
+</script>
