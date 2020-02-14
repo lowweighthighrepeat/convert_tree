@@ -26,12 +26,12 @@ window.onkeydown = (event) => {
 }
 sideNav.style.width = "250px"
 
-copyBtn.onclick = (event) => {
-  var copytext = document.getElementById("toText");
-  copytext.focus();
-  copytext.select();
-  document.execCommand("Copy");
-  copytext.blur();
-  document.getElementById("tooltiptext").style.opacity = 1;
-  self.setTimeout(() => { document.getElementById("tooltiptext").style.opacity = 0; }, 2000);
+copyBtn.onclick = () => {
+  var copytext = document.getElementById("toText")
+  copytext.focus()
+  copytext.select()
+  document.execCommand("Copy")
+  copytext.blur()
+  document.getElementById("tooltiptext").style.opacity = 1
+  self.setTimeout(() => { document.getElementById("tooltiptext").style.opacity = 0 }, 2000)
 }
