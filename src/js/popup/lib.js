@@ -2,9 +2,23 @@ module.exports = () => {
   var sideNav = document.getElementById("mySidenav")
   var closeBtn = document.getElementsByClassName("convert-tree-closebtn")[0]
   var copyBtn = document.getElementsByClassName("copy-btn")[0]
+  var fromValue = document.getElementById("fromText")
   var toValue = document.getElementById("toText")
   var tooltipText = document.getElementById("tooltiptext")
-    
+  var fromType = document.getElementById("from-type")
+  var toType = document.getElementById("to-type")
+  
+  function convertDefault(fromType, fromValue, toType){
+    const toTypeInt = parseInt(toType)
+    return parseInt(fromValue, fromType).toString(toTypeInt).toUpperCase()
+  }
+
+  fromValue.addEventListener("input", (e) => {
+    let convertedValue = convertDefault(fromType.value, fromValue.value, toType.value)
+    toValue.value = convertedValue
+  })
+
+
   function openSideNav() {
     sideNav.style.width = "250px"
   }
