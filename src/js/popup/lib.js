@@ -20,6 +20,7 @@ module.exports = () => {
 
 
   function openSideNav() {
+    fromValue.focus()
     sideNav.style.width = "250px"
   }
       
