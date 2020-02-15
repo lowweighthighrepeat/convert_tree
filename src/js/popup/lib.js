@@ -8,13 +8,43 @@ module.exports = () => {
   var fromType = document.getElementById("from-type")
   var toType = document.getElementById("to-type")
   
+  var hexRe = /^(0x)?[0-9a-fA-F]+$/
+  var binRe = /^[0-1]+$/
+
   function convertDefault(fromType, fromValue, toType){
     const toTypeInt = parseInt(toType)
     return parseInt(fromValue, fromType).toString(toTypeInt).toUpperCase()
   }
 
   fromValue.addEventListener("input", (e) => {
-    let convertedValue = convertDefault(fromType.value, fromValue.value, toType.value)
+    let fromValue_ = fromValue.value
+    let fromType_ = fromType.value
+    let toType_ = toType.value
+    let recommendFromSection = document.getElementsByClassName('recommend-from-section')[0]
+    let recommendFromTypeList = []
+
+    recommendFromSection.innerHTML = '' // clear all child nodes of remmend-from-section 
+    
+    if (fromValue_.search(hexRe) > -1)
+      recommendFromTypeList.push({type: "hex", value: 16})
+    if (fromValue_.search(binRe) > -1)
+      recommendFromTypeList.push({type: "bin", value: 2})
+    
+    for (let obj of recommendFromTypeList) {
+      let btn = document.createElement("button");
+      
+      btn.innerText = obj.type
+      btn.value = obj.value
+      
+      btn.addEventListener('click', (e) => {
+        fromType.value = e.target.value
+        fromValue.dispatchEvent(new Event('input'))
+      })
+
+      recommendFromSection.appendChild(btn)
+    }
+
+    let convertedValue = convertDefault(fromType_, fromValue_, toType_)
     toValue.value = convertedValue
   })
 
