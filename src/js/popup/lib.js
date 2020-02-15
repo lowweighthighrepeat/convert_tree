@@ -11,11 +11,6 @@ module.exports = () => {
   var hexRe = /^(0x)?[0-9a-fA-F]+$/
   var binRe = /^[0-1]+$/
 
-  function convertDefault(fromType, fromValue, toType){
-    const toTypeInt = parseInt(toType)
-    return parseInt(fromValue, fromType).toString(toTypeInt).toUpperCase()
-  }
-
   fromValue.addEventListener("input", (e) => {
     let fromValue_ = fromValue.value
     let fromType_ = fromType.value
@@ -24,13 +19,32 @@ module.exports = () => {
     let recommendFromTypeList = []
 
     recommendFromSection.innerHTML = '' // clear all child nodes of remmend-from-section 
+    recommendFromTypeList = makeRecommendList(fromValue_)  // include objs of which keys are {type: string, value: num}
     
+    generateRecommendBtn(fromValue, fromType, recommendFromTypeList, recommendFromSection)
+
+    let convertedValue = convertDefault(fromType_, fromValue_, toType_)
+    toValue.value = convertedValue
+  })
+
+  function convertDefault(fromType, fromValue, toType){
+    const toTypeInt = parseInt(toType)
+    return parseInt(fromValue, fromType).toString(toTypeInt).toUpperCase()
+  }
+  
+  function makeRecommendList(fromValue_) {
+    let list = [];
+
     if (fromValue_.search(hexRe) > -1)
-      recommendFromTypeList.push({type: "hex", value: 16})
+      list.push({type: "hex", value: 16})
     if (fromValue_.search(binRe) > -1)
-      recommendFromTypeList.push({type: "bin", value: 2})
-    
-    for (let obj of recommendFromTypeList) {
+      list.push({type: "bin", value: 2})
+
+    return list;
+  }
+
+  function generateRecommendBtn(fromValue, fromType, recommendList, section) {
+    for (let obj of recommendList) {
       let btn = document.createElement("button");
       
       btn.innerText = obj.type
@@ -41,13 +55,9 @@ module.exports = () => {
         fromValue.dispatchEvent(new Event('input'))
       })
 
-      recommendFromSection.appendChild(btn)
+      section.appendChild(btn)
     }
-
-    let convertedValue = convertDefault(fromType_, fromValue_, toType_)
-    toValue.value = convertedValue
-  })
-
+  }
 
   function openSideNav() {
     fromValue.focus()
