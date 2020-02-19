@@ -11,7 +11,7 @@ module.exports = () => {
   var hexRe = /^(0x)?[0-9a-fA-F]+$/
   var binRe = /^[0-1]+$/
 
-  fromValue.addEventListener("input", (e) => {
+  fromValue.addEventListener("input", () => {
     let fromValue_ = fromValue.value
     let fromType_ = fromType.value
     let toType_ = toType.value
@@ -33,19 +33,19 @@ module.exports = () => {
   }
   
   function makeRecommendList(fromValue_) {
-    let list = [];
+    let list = []
 
     if (fromValue_.search(hexRe) > -1)
       list.push({type: "hex", value: 16})
     if (fromValue_.search(binRe) > -1)
       list.push({type: "bin", value: 2})
 
-    return list;
+    return list
   }
 
   function generateRecommendBtn(fromValue, fromType, recommendList, section) {
     for (let obj of recommendList) {
-      let btn = document.createElement("button");
+      let btn = document.createElement("button")
       
       btn.innerText = obj.type
       btn.value = obj.value
