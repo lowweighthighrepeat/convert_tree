@@ -165,9 +165,12 @@
   font-size: 30px;
   color: #333333;
   text-align: center;
-  padding-bottom: 44px;
+  /* padding-bottom: 44px; */
 }
 
+.recommend-from-section {
+  height: 44px;
+}
 /*------------------------------------------------------------------
 [ Input ]*/
 
